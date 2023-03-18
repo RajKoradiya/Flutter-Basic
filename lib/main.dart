@@ -41,7 +41,115 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Text("Hello Flutter")
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        height: 200,
+                        width: 200,
+                        color: Colors.yellow,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        height: 200,
+                        width: 200,
+                        color: Colors.brown,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        height: 200,
+                        width: 200,
+                        color: Colors.cyan,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        height: 200,
+                        width: 200,
+                        color: Colors.blue,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        height: 200,
+                        width: 200,
+                        color: Colors.red,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.red,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.blueGrey,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.cyan,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.brown,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.yellow,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.red,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.blueGrey,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.cyan,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.brown,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 200,
+                // width: 200,
+                color: Colors.brown,
+              ),
+            ],
+          ),
+        ),
+      )
     );
   }
 }
