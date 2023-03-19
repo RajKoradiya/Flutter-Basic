@@ -43,34 +43,63 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: ListView.separated(itemBuilder: (context, index) {
-        return Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(arrName[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                  ),
-                ],
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.deepOrange.shade200,
+        child: Center(
+          child: Container(
+            width: 150,
+            height: 150,
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              // borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+              border: Border.all(
+                color: Colors.black,
+                width: 5,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black54,
+                  blurRadius: 50,
+                  spreadRadius: 30,
+                  // blurStyle: BlurStyle.outer
 
+                ),
+              ],
+              shape: BoxShape.circle
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-            ),
-          ],
-        );
-      },
-      itemCount: arrName.length,
-        separatorBuilder: (context, index) {
-        return Divider(height: 100, thickness: 10,);
-        },
+          ),
+        ),
       )
+      // ListView.separated(itemBuilder: (context, index) {
+      //   return Row(
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Column(
+      //           children: [
+      //             Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+      //             Padding(
+      //               padding: const EdgeInsets.all(8.0),
+      //               child: Text(arrName[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+      //             ),
+      //           ],
+      //         ),
+      //
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+      //       ),
+      //     ],
+      //   );
+      // },
+      // itemCount: arrName.length,
+      //   separatorBuilder: (context, index) {
+      //   return Divider(height: 100, thickness: 10,);
+      //   },
+      // )
 
       // ListView
       // ListView(
