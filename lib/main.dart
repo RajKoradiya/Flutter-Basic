@@ -44,7 +44,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView.separated(itemBuilder: (context, index) {
-        return Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
+        return Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(arrName[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                  ),
+                ],
+              ),
+
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrName[index], style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+            ),
+          ],
+        );
       },
       itemCount: arrName.length,
         separatorBuilder: (context, index) {
