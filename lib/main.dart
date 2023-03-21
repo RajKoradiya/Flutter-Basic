@@ -45,28 +45,29 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: CircleAvatar(
-          child: Container(
-            width: 60,
-            height: 60,
-            child: Column(
-              children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    child: Image.asset("assets/image/flutter-logo.png"),
-                  ),
-                Text("Flutter")
-              ],
-
-            ),
-          ),
-          // backgroundImage: AssetImage("assets/image/flutter-logo.png"),
-          backgroundColor: Colors.black,
-          maxRadius: 60,
-        ),
-      )
+      body: Center(child: Text("Raj", style: TextStyle(fontFamily: "NSW", fontSize: 55, fontWeight: FontWeight.w400),))
+      // Center(
+      //   child: CircleAvatar(
+      //     child: Container(
+      //       width: 60,
+      //       height: 60,
+      //       child: Column(
+      //         children: [
+      //             Container(
+      //               width: 40,
+      //               height: 40,
+      //               child: Image.asset("assets/image/flutter-logo.png"),
+      //             ),
+      //           Text("Flutter")
+      //         ],
+      //
+      //       ),
+      //     ),
+      //     // backgroundImage: AssetImage("assets/image/flutter-logo.png"),
+      //     backgroundColor: Colors.black,
+      //     maxRadius: 60,
+      //   ),
+      // )
       // ListView.separated(itemBuilder: (context, index) {
       //   return ListTile(
       //     leading: Text('${index+1}'),
