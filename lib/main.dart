@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
+    // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
 
     return Scaffold(
       appBar: AppBar(
@@ -45,20 +45,41 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body:
-      ListView.separated(itemBuilder: (context, index) {
-        return ListTile(
-          leading: Text('${index+1}'),
-          title: Text(arrName[index]),
-          subtitle: Text("Names"),
-          trailing: Icon(Icons.add),
-        );
-      },
-        itemCount: arrName.length,
-        separatorBuilder: (context, index) {
-          return Divider(height: 10, thickness: 2,);
-        },
+      body: Center(
+        child: CircleAvatar(
+          child: Container(
+            width: 60,
+            height: 60,
+            child: Column(
+              children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    child: Image.asset("assets/image/flutter-logo.png"),
+                  ),
+                Text("Flutter")
+              ],
+
+            ),
+          ),
+          // backgroundImage: AssetImage("assets/image/flutter-logo.png"),
+          backgroundColor: Colors.black,
+          maxRadius: 60,
+        ),
       )
+      // ListView.separated(itemBuilder: (context, index) {
+      //   return ListTile(
+      //     leading: Text('${index+1}'),
+      //     title: Text(arrName[index]),
+      //     subtitle: Text("Names"),
+      //     trailing: Icon(Icons.add),
+      //   );
+      // },
+      //   itemCount: arrName.length,
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height: 10, thickness: 2,);
+      //   },
+      // )
       // Container(
       //   margin: EdgeInsets.all(25),
       //   child: Padding(
