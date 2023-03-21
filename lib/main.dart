@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
+    // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
 
     return Scaffold(
       appBar: AppBar(
@@ -43,35 +45,43 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.deepOrange.shade200,
-        child: Center(
-          child: Container(
-            width: 150,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-              // borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
-              border: Border.all(
-                color: Colors.black,
-                width: 5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black54,
-                  blurRadius: 50,
-                  spreadRadius: 30,
-                  // blurStyle: BlurStyle.outer
-
-                ),
-              ],
-              shape: BoxShape.circle
-            ),
-          ),
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          child: Image.asset("assets/image/flutter-logo.png"),
         ),
       )
+      // Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   color: Colors.deepOrange.shade200,
+      //   child: Center(
+      //     child: Container(
+      //       width: 150,
+      //       height: 150,
+      //       decoration: BoxDecoration(
+      //         color: Colors.yellow,
+      //         // borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+      //         border: Border.all(
+      //           color: Colors.black,
+      //           width: 5,
+      //         ),
+      //         // ignore: prefer_const_literals_to_create_immutables
+      //         boxShadow: [
+      //           BoxShadow(
+      //             color: Colors.black54,
+      //             blurRadius: 50,
+      //             spreadRadius: 30,
+      //             // blurStyle: BlurStyle.outer
+      //
+      //           ),
+      //         ],
+      //         shape: BoxShape.circle
+      //       ),
+      //     ),
+      //   ),
+      // )
       // ListView.separated(itemBuilder: (context, index) {
       //   return Row(
       //     children: [
