@@ -45,13 +45,86 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          child: Image.asset("assets/image/flutter-logo.png"),
-        ),
+      body:
+      Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.orange,
+            ),
+          ),
+        ],
       )
+      // Row(
+      //   children: [
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(
+      //         width: 50,
+      //         height: 100,
+      //         color: Colors.blue,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 4,
+      //       child: Container(
+      //         width: 50,
+      //         height: 100,
+      //         color: Colors.red,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 1,
+      //       child: Container(
+      //         width: 50,
+      //         height: 100,
+      //         color: Colors.green,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(
+      //         width: 50,
+      //         height: 100,
+      //         color: Colors.orange,
+      //       ),
+      //     ),
+      //   ],
+      // )
+      // Center(
+      //   child: Container(
+      //     height: 100,
+      //     width: 100,
+      //     child: Image.asset("assets/image/flutter-logo.png"),
+      //   ),
+      // )
       // Container(
       //   width: double.infinity,
       //   height: double.infinity,
