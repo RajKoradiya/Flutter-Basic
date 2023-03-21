@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
+    var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
 
     return Scaffold(
       appBar: AppBar(
@@ -46,14 +46,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body:
-      Container(
-        margin: EdgeInsets.all(25),
-        child: Padding(
-          padding: EdgeInsets.only(top: 10, left: 10),
-          child: Text("Raj", style: TextStyle(fontSize: 55),),
-        ),
-        color: Colors.green,
+      ListView.separated(itemBuilder: (context, index) {
+        return ListTile(
+          leading: Text('${index+1}'),
+          title: Text(arrName[index]),
+          subtitle: Text("Names"),
+          trailing: Icon(Icons.add),
+        );
+      },
+        itemCount: arrName.length,
+        separatorBuilder: (context, index) {
+          return Divider(height: 10, thickness: 2,);
+        },
       )
+      // Container(
+      //   margin: EdgeInsets.all(25),
+      //   child: Padding(
+      //     padding: EdgeInsets.only(top: 10, left: 10),
+      //     child: Text("Raj", style: TextStyle(fontSize: 55),),
+      //   ),
+      //   color: Colors.green,
+      // )
       // Column(
       //   children: [
       //     Expanded(
