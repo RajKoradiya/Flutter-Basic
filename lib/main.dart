@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -46,42 +46,50 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body:
-      Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.orange,
-            ),
-          ),
-        ],
+      Container(
+        margin: EdgeInsets.all(25),
+        child: Padding(
+          padding: EdgeInsets.only(top: 10, left: 10),
+          child: Text("Raj", style: TextStyle(fontSize: 55),),
+        ),
+        color: Colors.green,
       )
+      // Column(
+      //   children: [
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.blue,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 4,
+      //       child: Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.red,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 1,
+      //       child: Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.green,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.orange,
+      //       ),
+      //     ),
+      //   ],
+      // )
       // Row(
       //   children: [
       //     Expanded(
