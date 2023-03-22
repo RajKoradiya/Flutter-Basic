@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui_assets/ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
+          titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
+        )
       ),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -45,14 +50,22 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(child: Container(
-        width: 100,
-          height: 100,
-          child: Center(child: Text("Raj", style: TextStyle(fontFamily: "NSW", fontSize: 55, fontWeight: FontWeight.w400),)),
-          color: Colors.blue,
+      body: Column(
+        children: [
+          Text("Text 1", style: myTextStyle11(textColor: Colors.cyan, fontWeight: FontWeight.w100)),
+          Text("Text 1", style: Theme.of(context).textTheme.titleMedium,),
+          Text("Text 1", style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.orange)),
+          Text("Text 1", style: myTextStyle11(),)
+        ],
       )
-
-      )
+      // Center(child: Container(
+      //   width: 100,
+      //     height: 100,
+      //     child: Center(child: Text("Raj", style: TextStyle(fontFamily: "NSW", fontSize: 55, fontWeight: FontWeight.w400),)),
+      //     color: Colors.cyanAccent,
+      // )
+      //
+      // )
       // Center(
       //   child: CircleAvatar(
       //     child: Container(
