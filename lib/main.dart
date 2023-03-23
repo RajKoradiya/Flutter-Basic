@@ -85,6 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //   Container(color: colors[6],),
       //   Container(color: colors[7],),
       // ],)
+
+
+      //<-------------------------------------------Date & Time Picker------------------------------------------------->
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
@@ -113,6 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // )
+
+
+
+      //<----------------------------------Date-Format------------------------------------------->
       // Center(
       //   child: Container(
       //     width: 200,
@@ -130,6 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // )
+
+
+
+      //<------------------------------------Login Card using TextField-------------------------------------------->
       // Center(
       //   child: SizedBox(
       //     width: 300,
@@ -218,6 +229,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // )
+
+
+      //<-----------------------------------Card widget------------------------------------------->
       // Center(
       //   child: Card(
       //     shadowColor: Colors.cyanAccent,
@@ -229,6 +243,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //       )
       //   ),
       // )
+
+
+
+      //<--------------------------------Style & Theme-------------------------------------->
       // Column(
       //   children: [
       //     Text("Text 1", style: myTextStyle11(textColor: Colors.cyan, fontWeight: FontWeight.w100)),
@@ -237,6 +255,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     Text("Text 1", style: myTextStyle11(),)
       //   ],
       // )
+
+
+
+      //<----------------------------Add custome fontfamily------------------------------------------>
       // Center(child: Container(
       //   width: 100,
       //     height: 100,
@@ -245,6 +267,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // )
       //
       // )
+
+
+      //<-------------------------------------------CircleAvatar------------------------------------------>
       // Center(
       //   child: CircleAvatar(
       //     child: Container(
@@ -267,6 +292,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     maxRadius: 60,
       //   ),
       // )
+
+
+
+      //<--------------------------------ListTile------------------------------------>
       // ListView.separated(itemBuilder: (context, index) {
       //   return ListTile(
       //     leading: Text('${index+1}'),
@@ -288,6 +317,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       //   color: Colors.green,
       // )
+
+
+      //<--------------------------------------Expanded--------------------------------------->
       // Column(
       //   children: [
       //     Expanded(
@@ -360,6 +392,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ],
       // )
+
+
+
+      //<-------------------------------------Add Image------------------------------------------>
       // Center(
       //   child: Container(
       //     height: 100,
@@ -367,6 +403,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //     child: Image.asset("assets/image/flutter-logo.png"),
       //   ),
       // )
+
+
+      //<----------------------------------------Container Decoration----------------------------------------->
       // Container(
       //   width: double.infinity,
       //   height: double.infinity,
@@ -397,6 +436,11 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // )
+
+
+
+
+      //<--------------------------------------ListView------------------------------------------->
       // ListView.separated(itemBuilder: (context, index) {
       //   return Row(
       //     children: [
@@ -457,7 +501,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-      // Scroll View
+      // <--------------------------------------Scroll View----------------------------------->
       // Padding(
       //   padding: const EdgeInsets.all(8.0),
       //   child: SingleChildScrollView(
