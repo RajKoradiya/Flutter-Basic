@@ -47,40 +47,72 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
+    var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Select Date", style: TextStyle(fontSize: 25),),
-            ElevatedButton(onPressed: () async {
-              DateTime? datePicker = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2020),
-                  lastDate: DateTime(2024));
-
-              if(datePicker!=null){
-                print("Date Selected : ${datePicker.day} / ${datePicker.month} / ${datePicker.year}");
-              }
-            }, child: Text("Select Date")),
-            ElevatedButton(onPressed: () async {
-              TimeOfDay? timePicker = await showTimePicker(
-                  context: context, 
-                  initialTime: TimeOfDay.now());
-
-              if(timePicker!=null){
-                print("Date Selected : ${timePicker.hour} / ${timePicker.minute}");
-              }
-            }, child: Text("Select Time"))
-          ],
-        ),
-      )
+      body:
+      GridView.builder(itemBuilder: (context, index) {
+        return Container(color: colors[index],);
+      },itemCount: colors.length, gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100, crossAxisSpacing: 10,mainAxisSpacing: 10),)
+      // GridView.extent(maxCrossAxisExtent: 100,
+      // crossAxisSpacing: 10,
+      // mainAxisSpacing: 10,
+      // children: [
+      //   Container(color: colors[0],),
+      //   Container(color: colors[1],),
+      //   Container(color: colors[2],),
+      //   Container(color: colors[3],),
+      //   Container(color: colors[4],),
+      //   Container(color: colors[5],),
+      //   Container(color: colors[6],),
+      //   Container(color: colors[7],),
+      // ],)
+      // GridView.count(crossAxisCount: 3,
+      // crossAxisSpacing: 10,
+      // mainAxisSpacing: 10,
+      // children: [
+      //   Container(color: colors[0],),
+      //   Container(color: colors[1],),
+      //   Container(color: colors[2],),
+      //   Container(color: colors[3],),
+      //   Container(color: colors[4],),
+      //   Container(color: colors[5],),
+      //   Container(color: colors[6],),
+      //   Container(color: colors[7],),
+      // ],)
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text("Select Date", style: TextStyle(fontSize: 25),),
+      //       ElevatedButton(onPressed: () async {
+      //         DateTime? datePicker = await showDatePicker(
+      //             context: context,
+      //             initialDate: DateTime.now(),
+      //             firstDate: DateTime(2020),
+      //             lastDate: DateTime(2024));
+      //
+      //         if(datePicker!=null){
+      //           print("Date Selected : ${datePicker.day} / ${datePicker.month} / ${datePicker.year}");
+      //         }
+      //       }, child: Text("Select Date")),
+      //       ElevatedButton(onPressed: () async {
+      //         TimeOfDay? timePicker = await showTimePicker(
+      //             context: context,
+      //             initialTime: TimeOfDay.now());
+      //
+      //         if(timePicker!=null){
+      //           print("Date Selected : ${timePicker.hour} / ${timePicker.minute}");
+      //         }
+      //       }, child: Text("Select Time"))
+      //     ],
+      //   ),
+      // )
       // Center(
       //   child: Container(
       //     width: 200,
