@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/ui_assets/ui.dart';
-import 'package:intl/intl.dart';
+// import 'package:flutter_demo/ui_assets/ui.dart';
+// import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,30 +46,58 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
-    var time = DateTime.now();
+    // var time = DateTime.now();
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body:  Center(
-        child: Container(
-          width: 200,
-          height: 200,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Current Time is : ${DateFormat('jms').format(time)}", style: myTextStyle11(),),
-              ElevatedButton(onPressed: (){
-                setState(() {
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Select Date", style: TextStyle(fontSize: 25),),
+            ElevatedButton(onPressed: () async {
+              DateTime? datePicker = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2020),
+                  lastDate: DateTime(2024));
 
-                });
-              }, child: Text("Change Time"))
-            ],
-          ),
+              if(datePicker!=null){
+                print("Date Selected : ${datePicker.day} / ${datePicker.month} / ${datePicker.year}");
+              }
+            }, child: Text("Select Date")),
+            ElevatedButton(onPressed: () async {
+              TimeOfDay? timePicker = await showTimePicker(
+                  context: context, 
+                  initialTime: TimeOfDay.now());
+
+              if(timePicker!=null){
+                print("Date Selected : ${timePicker.hour} / ${timePicker.minute}");
+              }
+            }, child: Text("Select Time"))
+          ],
         ),
       )
+      // Center(
+      //   child: Container(
+      //     width: 200,
+      //     height: 200,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Text("Current Time is : ${DateFormat('jms').format(time)}", style: myTextStyle11(),),
+      //         ElevatedButton(onPressed: (){
+      //           setState(() {
+      //
+      //           });
+      //         }, child: Text("Change Time"))
+      //       ],
+      //     ),
+      //   ),
+      // )
       // Center(
       //   child: SizedBox(
       //     width: 300,
