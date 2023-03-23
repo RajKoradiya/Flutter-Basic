@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 
 TextStyle myTextStyle11(
 {
-  Color textColor = Colors.brown,
+  // Color textColor = Colors.brown,
   FontWeight fontWeight = FontWeight.bold
 }
     ) {
   return TextStyle(
     fontSize: 55,
     fontWeight: fontWeight,
-    fontStyle: FontStyle.italic,
-    color: textColor
+    // fontStyle: FontStyle.italic,
+    // color: textColor
   );
 }

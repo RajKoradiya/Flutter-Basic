@@ -50,14 +50,25 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          Text("Text 1", style: myTextStyle11(textColor: Colors.cyan, fontWeight: FontWeight.w100)),
-          Text("Text 1", style: Theme.of(context).textTheme.titleMedium,),
-          Text("Text 1", style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.orange)),
-          Text("Text 1", style: myTextStyle11(),)
-        ],
+      body: Center(
+        child: Card(
+          shadowColor: Colors.cyanAccent,
+          elevation: 20,
+            color: Colors.orange,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Raj", style: myTextStyle11(),),
+            )
+        ),
       )
+      // Column(
+      //   children: [
+      //     Text("Text 1", style: myTextStyle11(textColor: Colors.cyan, fontWeight: FontWeight.w100)),
+      //     Text("Text 1", style: Theme.of(context).textTheme.titleMedium,),
+      //     Text("Text 1", style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.orange)),
+      //     Text("Text 1", style: myTextStyle11(),)
+      //   ],
+      // )
       // Center(child: Container(
       //   width: 100,
       //     height: 100,
