@@ -9,8 +9,9 @@ TextStyle myTextStyle11(
 }
     ) {
   return TextStyle(
-    fontSize: 55,
-    fontWeight: fontWeight,
+      fontSize: 40,
+      fontWeight: fontWeight,
+      fontFamily: "NSW",
     // fontStyle: FontStyle.italic,
     // color: textColor
   );

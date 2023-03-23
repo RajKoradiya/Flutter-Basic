@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
-          headlineLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
-          titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
+          // headlineLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
+          // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
         )
       ),
       debugShowCheckedModeBanner: false,
@@ -38,6 +38,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var emailText = TextEditingController();
+  var passText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +53,104 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Card(
-          shadowColor: Colors.cyanAccent,
-          elevation: 20,
-            color: Colors.orange,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Raj", style: myTextStyle11(),),
-            )
+        child: Container(
+          width: 300,
+          height: 300,
+          child: Card(
+            elevation: 6,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Log-in", style: myTextStyle11(),),
+                    Container(height: 10,),
+                    TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailText,
+                      decoration: InputDecoration(
+                        hintText: "Enter E-mail",
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 3
+                          )
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.cyan,
+                                width: 2
+                            )
+                        ),
+                        disabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                                color: Colors.black12,
+                                width: 2
+                            )
+                        ),
+                        prefixIcon: Icon(Icons.email_rounded, color: Colors.black54,),
+                      ),
+                    ),
+                    Container(height: 10,),
+                    TextField(
+                      controller: passText,
+                      obscureText: true,
+                      obscuringCharacter: '*',
+                      decoration: InputDecoration(
+                          hintText: "Enter Password",
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(
+                                  color: Colors.red,
+                                  width: 3
+                              )
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(
+                                color: Colors.cyan,
+                                  width: 2
+                              )
+                          ),
+                          disabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(
+                                  color: Colors.black12,
+                                  width: 2
+                              )
+                          ),
+                          prefixIcon: Icon(Icons.lock, color: Colors.black54,)
+                      ),
+                    ),
+                    Container(height: 10,),
+                    ElevatedButton(onPressed: (){
+                      String uEmail = emailText.text.toString();
+                      String uPass = passText.text;
+
+                      print("Email = $uEmail ,  Password = $uPass");
+                    }, child: Text("Login"))
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       )
+      // Center(
+      //   child: Card(
+      //     shadowColor: Colors.cyanAccent,
+      //     elevation: 20,
+      //       color: Colors.orange,
+      //       child: Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text("Raj", style: myTextStyle11(),),
+      //       )
+      //   ),
+      // )
       // Column(
       //   children: [
       //     Text("Text 1", style: myTextStyle11(textColor: Colors.cyan, fontWeight: FontWeight.w100)),
