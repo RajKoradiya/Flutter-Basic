@@ -38,108 +38,125 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var emailText = TextEditingController();
-  var passText = TextEditingController();
+  // var emailText = TextEditingController();
+  // var passText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
 
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
-
+    var time = DateTime.now();
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body:  Center(
         child: Container(
-          width: 300,
-          height: 300,
-          child: Card(
-            elevation: 6,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Log-in", style: myTextStyle11(),),
-                    Container(height: 10,),
-                    TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailText,
-                      decoration: InputDecoration(
-                        hintText: "Enter E-mail",
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                            width: 3
-                          )
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(
-                              color: Colors.cyan,
-                                width: 2
-                            )
-                        ),
-                        disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(
-                                color: Colors.black12,
-                                width: 2
-                            )
-                        ),
-                        prefixIcon: Icon(Icons.email_rounded, color: Colors.black54,),
-                      ),
-                    ),
-                    Container(height: 10,),
-                    TextField(
-                      controller: passText,
-                      obscureText: true,
-                      obscuringCharacter: '*',
-                      decoration: InputDecoration(
-                          hintText: "Enter Password",
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                  color: Colors.red,
-                                  width: 3
-                              )
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                color: Colors.cyan,
-                                  width: 2
-                              )
-                          ),
-                          disabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                  color: Colors.black12,
-                                  width: 2
-                              )
-                          ),
-                          prefixIcon: Icon(Icons.lock, color: Colors.black54,)
-                      ),
-                    ),
-                    Container(height: 10,),
-                    ElevatedButton(onPressed: (){
-                      String uEmail = emailText.text.toString();
-                      String uPass = passText.text;
+          width: 200,
+          height: 200,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Current Time is : ${time.hour} : ${time.minute} : ${time.second}", style: myTextStyle11(),),
+              ElevatedButton(onPressed: (){
+                setState(() {
 
-                      print("Email = $uEmail ,  Password = $uPass");
-                    }, child: Text("Login"))
-                  ],
-                ),
-              ),
-            ),
+                });
+              }, child: Text("Change Time"))
+            ],
           ),
         ),
       )
+      // Center(
+      //   child: SizedBox(
+      //     width: 300,
+      //     height: 300,
+      //     child: Card(
+      //       elevation: 6,
+      //       child: Center(
+      //         child: Padding(
+      //           padding: const EdgeInsets.all(10),
+      //           child: Column(
+      //             mainAxisAlignment: MainAxisAlignment.center,
+      //             children: [
+      //               Text("Log-in", style: myTextStyle11(),),
+      //               Container(height: 10,),
+      //               TextField(
+      //                 keyboardType: TextInputType.emailAddress,
+      //                 controller: emailText,
+      //                 decoration: InputDecoration(
+      //                   hintText: "Enter E-mail",
+      //                   focusedBorder: OutlineInputBorder(
+      //                     borderRadius: BorderRadius.circular(20),
+      //                     borderSide: BorderSide(
+      //                       color: Colors.red,
+      //                       width: 3
+      //                     )
+      //                   ),
+      //                   enabledBorder: OutlineInputBorder(
+      //                       borderRadius: BorderRadius.circular(20),
+      //                       borderSide: BorderSide(
+      //                         color: Colors.cyan,
+      //                           width: 2
+      //                       )
+      //                   ),
+      //                   disabledBorder: OutlineInputBorder(
+      //                       borderRadius: BorderRadius.circular(20),
+      //                       borderSide: BorderSide(
+      //                           color: Colors.black12,
+      //                           width: 2
+      //                       )
+      //                   ),
+      //                   prefixIcon: Icon(Icons.email_rounded, color: Colors.black54,),
+      //                 ),
+      //               ),
+      //               Container(height: 10,),
+      //               TextField(
+      //                 controller: passText,
+      //                 obscureText: true,
+      //                 obscuringCharacter: '*',
+      //                 decoration: InputDecoration(
+      //                     hintText: "Enter Password",
+      //                     focusedBorder: OutlineInputBorder(
+      //                         borderRadius: BorderRadius.circular(20),
+      //                         borderSide: BorderSide(
+      //                             color: Colors.red,
+      //                             width: 3
+      //                         )
+      //                     ),
+      //                     enabledBorder: OutlineInputBorder(
+      //                         borderRadius: BorderRadius.circular(20),
+      //                         borderSide: BorderSide(
+      //                           color: Colors.cyan,
+      //                             width: 2
+      //                         )
+      //                     ),
+      //                     disabledBorder: OutlineInputBorder(
+      //                         borderRadius: BorderRadius.circular(20),
+      //                         borderSide: BorderSide(
+      //                             color: Colors.black12,
+      //                             width: 2
+      //                         )
+      //                     ),
+      //                     prefixIcon: Icon(Icons.lock, color: Colors.black54,)
+      //                 ),
+      //               ),
+      //               Container(height: 10,),
+      //               ElevatedButton(onPressed: (){
+      //                 String uEmail = emailText.text.toString();
+      //                 String uPass = passText.text;
+      //
+      //                 print("Email = $uEmail ,  Password = $uPass");
+      //               }, child: Text("Login"))
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // )
       // Center(
       //   child: Card(
       //     shadowColor: Colors.cyanAccent,
