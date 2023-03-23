@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/ui_assets/ui.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Current Time is : ${time.hour} : ${time.minute} : ${time.second}", style: myTextStyle11(),),
+              Text("Current Time is : ${DateFormat('jms').format(time)}", style: myTextStyle11(),),
               ElevatedButton(onPressed: (){
                 setState(() {
 
@@ -509,3 +510,41 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+// <-----------------------------Date Format---------------------------------->
+
+// DateFormat.d([locale]) : this('d', locale);
+// DateFormat.E([locale]) : this('E', locale);
+// DateFormat.EEEE([locale]) : this('EEEE', locale);
+// DateFormat.LLL([locale]) : this('LLL', locale);
+// DateFormat.LLLL([locale]) : this('LLLL', locale);
+// DateFormat.M([locale]) : this('M', locale);
+// DateFormat.Md([locale]) : this('Md', locale);
+// DateFormat.MEd([locale]) : this('MEd', locale);
+// DateFormat.MMM([locale]) : this('MMM', locale);
+// DateFormat.MMMd([locale]) : this('MMMd', locale);
+// DateFormat.MMMEd([locale]) : this('MMMEd', locale);
+// DateFormat.MMMM([locale]) : this('MMMM', locale);
+// DateFormat.MMMMd([locale]) : this('MMMMd', locale);
+// DateFormat.MMMMEEEEd([locale]) : this('MMMMEEEEd', locale);
+// DateFormat.QQQ([locale]) : this('QQQ', locale);
+// DateFormat.QQQQ([locale]) : this('QQQQ', locale);
+// DateFormat.y([locale]) : this('y', locale);
+// DateFormat.yM([locale]) : this('yM', locale);
+// DateFormat.yMd([locale]) : this('yMd', locale);
+// DateFormat.yMEd([locale]) : this('yMEd', locale);
+// DateFormat.yMMM([locale]) : this('yMMM', locale);
+// DateFormat.yMMMd([locale]) : this('yMMMd', locale);
+// DateFormat.yMMMEd([locale]) : this('yMMMEd', locale);
+// DateFormat.yMMMM([locale]) : this('yMMMM', locale);
+// DateFormat.yMMMMd([locale]) : this('yMMMMd', locale);
+// DateFormat.yMMMMEEEEd([locale]) : this('yMMMMEEEEd', locale);
+// DateFormat.yQQQ([locale]) : this('yQQQ', locale);
+// DateFormat.yQQQQ([locale]) : this('yQQQQ', locale);
+// DateFormat.H([locale]) : this('H', locale);
+// DateFormat.Hm([locale]) : this('Hm', locale);
+// DateFormat.Hms([locale]) : this('Hms', locale);
+// DateFormat.j([locale]) : this('j', locale);
+// DateFormat.jm([locale]) : this('jm', locale);
+// DateFormat.jms([locale]) : this('jms', locale);
