@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
-    var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
+    // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
