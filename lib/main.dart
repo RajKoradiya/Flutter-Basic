@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/round_btn.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -54,58 +55,83 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Wrap(
-          direction: Axis.horizontal,
-          spacing: 10,
-          runSpacing: 10,
-          alignment: WrapAlignment.center,
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.yellow,
+      body: Center(
+        child: RichText(
+          text: TextSpan(
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 15
             ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.brown,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.cyan,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.red,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.greenAccent,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.green,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.orange,
-            ),
-          ],
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Hello ',
+              ),
+              TextSpan(
+                text: 'World! ', style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.w400)
+              ),
+              TextSpan(
+                text: 'Welcome to '
+              ),
+              TextSpan(
+                text: 'Flutter! ',style: myTextStyle25()
+              )
+            ]
+          ),
+
         ),
-      ),
+      )
+      // SizedBox(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   child: Wrap(
+      //     direction: Axis.horizontal,
+      //     spacing: 10,
+      //     runSpacing: 10,
+      //     alignment: WrapAlignment.center,
+      //     children: [
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.yellow,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.brown,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.cyan,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.blue,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.red,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.greenAccent,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.green,
+      //       ),
+      //       Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.orange,
+      //       ),
+      //     ],
+      //   ),
+      // ),
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,

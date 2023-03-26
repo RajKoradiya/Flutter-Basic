@@ -18,15 +18,17 @@ TextStyle myTextStyle20(
 }
 
 TextStyle myTextStyle25(
-    {
-      // Color textColor = Colors.brown,
-      FontWeight fontWeight = FontWeight.bold
-    }
+    // {
+    //   // Color textColor = Colors.brown,
+    //   FontWeight fontWeight = FontWeight.bold
+    // }
     ) {
   return TextStyle(
     fontSize: 25,
-    fontWeight: fontWeight,
+    fontWeight: FontWeight.bold,
     fontFamily: "NSW",
+    fontStyle: FontStyle.italic,
+    color: Colors.green
     // fontStyle: FontStyle.italic,
     // color: textColor
   );
