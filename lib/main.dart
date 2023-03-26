@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/ui_assets/ui.dart';
+// import 'package:flutter_demo/ui_assets/ui.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/round_btn.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -56,30 +57,47 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RichText(
-          text: TextSpan(
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 15
-            ),
-            children: <TextSpan>[
-              TextSpan(
-                text: 'Hello ',
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+              Icons.adb_rounded,
+                color: Colors.green,
+                size: 50,
               ),
-              TextSpan(
-                text: 'World! ', style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.w400)
-              ),
-              TextSpan(
-                text: 'Welcome to '
-              ),
-              TextSpan(
-                text: 'Flutter! ',style: myTextStyle25()
+              FaIcon(
+                  FontAwesomeIcons.amazonPay,
+                size: 50,
+                color: Colors.orange,
               )
-            ]
-          ),
-
-        ),
+            ],
+          )
       )
+      // Center(
+      //   child: RichText(
+      //     text: TextSpan(
+      //       style: TextStyle(
+      //         color: Colors.grey,
+      //         fontSize: 15
+      //       ),
+      //       children: <TextSpan>[
+      //         TextSpan(
+      //           text: 'Hello ',
+      //         ),
+      //         TextSpan(
+      //           text: 'World! ', style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.w400)
+      //         ),
+      //         TextSpan(
+      //           text: 'Welcome to '
+      //         ),
+      //         TextSpan(
+      //           text: 'Flutter! ',style: myTextStyle25()
+      //         )
+      //       ]
+      //     ),
+      //
+      //   ),
+      // )
       // SizedBox(
       //   width: double.infinity,
       //   height: double.infinity,
