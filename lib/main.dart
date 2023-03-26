@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
+// import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/round_btn.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -56,23 +58,41 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-              Icons.adb_rounded,
-                color: Colors.green,
-                size: 50,
-              ),
-              FaIcon(
-                  FontAwesomeIcons.amazonPay,
-                size: 50,
+      body: Container(
+        width: 300,
+        height: 300,
+        color: Colors.blueGrey,
+        child: Stack(
+          children: [
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: Container(
+                width: 100,
+                height: 100,
                 color: Colors.orange,
-              )
-            ],
-          )
+              ),
+            )
+          ],
+        ),
       )
+      // Center(
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Icon(
+      //         Icons.adb_rounded,
+      //           color: Colors.green,
+      //           size: 50,
+      //         ),
+      //         FaIcon(
+      //             FontAwesomeIcons.amazonPay,
+      //           size: 50,
+      //           color: Colors.orange,
+      //         )
+      //       ],
+      //     )
+      // )
       // Center(
       //   child: RichText(
       //     text: TextSpan(
