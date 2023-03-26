@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui_assets/ui.dart';
+import 'package:flutter_demo/widgets/round_btn.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:intl/intl.dart';
 
@@ -54,29 +56,68 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body:
-      Container(
-        width: 400,
-        height: 400,
-        child: Stack(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 300,
-              height: 300,
-              color: Colors.blue,
-            ),
-            Positioned(
-              left: 60,
-              top: 60,
-              child: Container(
-                width: 280,
-                height: 280,
-                color: Colors.blue.shade700,
+              width: 150,
+              height: 50,
+              // height: 100,
+              child: RoundBtn(
+                btName: "Login",
+                icon: Icon(Icons.login),
+                callback: (){
+                  print("Login Successfull!");
+                },
+                textStyle: myTextStyle20(),
+
               ),
-            )
+            ),
+            Container(height: 10,),
+            Container(
+              width: 150,
+              height: 50,
+              // height: 100,
+              child: RoundBtn(
+                btName: "Submit",
+                // icon: Icon(Icons.login),
+                callback: (){
+                  print("Submited");
+                },
+                textStyle: myTextStyle25(),
+                bgColor: Colors.blue,
+
+              ),
+            ),
+
           ],
         ),
       )
+      // Container(
+      //   width: 400,
+      //   height: 400,
+      //   child: Stack(
+      //     children: [
+      //       Container(
+      //         width: 300,
+      //         height: 300,
+      //         color: Colors.blue,
+      //       ),
+      //       Positioned(
+      //         left: 60,
+      //         top: 60,
+      //         child: Container(
+      //           width: 280,
+      //           height: 280,
+      //           color: Colors.blue.shade700,
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // )
+
+
 
         //<--------------------------CallBack Function & Custom widget----------------------------------------------->
       // Container(

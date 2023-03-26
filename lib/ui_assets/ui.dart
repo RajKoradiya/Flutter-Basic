@@ -2,16 +2,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-TextStyle myTextStyle11(
+TextStyle myTextStyle20(
 {
   // Color textColor = Colors.brown,
   FontWeight fontWeight = FontWeight.bold
 }
     ) {
   return TextStyle(
-      fontSize: 40,
+      fontSize: 20,
       fontWeight: fontWeight,
       fontFamily: "NSW",
+    // fontStyle: FontStyle.italic,
+    // color: textColor
+  );
+}
+
+TextStyle myTextStyle25(
+    {
+      // Color textColor = Colors.brown,
+      FontWeight fontWeight = FontWeight.bold
+    }
+    ) {
+  return TextStyle(
+    fontSize: 25,
+    fontWeight: fontWeight,
+    fontFamily: "NSW",
     // fontStyle: FontStyle.italic,
     // color: textColor
   );
