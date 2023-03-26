@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/ui_assets/ui.dart';
-import 'package:flutter_demo/widgets/round_btn.dart';
+// import 'package:flutter_demo/ui_assets/ui.dart';
+// import 'package:flutter_demo/widgets/round_btn.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:intl/intl.dart';
 
@@ -19,12 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: TextTheme(
-          // headlineLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
-          // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
-        )
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+              // headlineLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
+              // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
+              )),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -46,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
     // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
@@ -56,44 +54,96 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Wrap(
+          direction: Axis.horizontal,
+          spacing: 10,
+          runSpacing: 10,
+          alignment: WrapAlignment.center,
           children: [
             Container(
-              width: 150,
-              height: 50,
-              // height: 100,
-              child: RoundBtn(
-                btName: "Login",
-                icon: Icon(Icons.login),
-                callback: (){
-                  print("Login Successfull!");
-                },
-                textStyle: myTextStyle20(),
-
-              ),
+              height: 100,
+              width: 100,
+              color: Colors.yellow,
             ),
-            Container(height: 10,),
             Container(
-              width: 150,
-              height: 50,
-              // height: 100,
-              child: RoundBtn(
-                btName: "Submit",
-                // icon: Icon(Icons.login),
-                callback: (){
-                  print("Submited");
-                },
-                textStyle: myTextStyle25(),
-                bgColor: Colors.blue,
-
-              ),
+              height: 100,
+              width: 100,
+              color: Colors.brown,
             ),
-
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.cyan,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.greenAccent,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.green,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.orange,
+            ),
           ],
         ),
-      )
+      ),
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Container(
+      //         width: 150,
+      //         height: 50,
+      //         // height: 100,
+      //         child: RoundBtn(
+      //           btName: "Login",
+      //           icon: Icon(Icons.login),
+      //           callback: (){
+      //             print("Login Successfull!");
+      //           },
+      //           textStyle: myTextStyle20(),
+      //
+      //         ),
+      //       ),
+      //       Container(height: 10,),
+      //       Container(
+      //         width: 150,
+      //         height: 50,
+      //         // height: 100,
+      //         child: RoundBtn(
+      //           btName: "Submit",
+      //           // icon: Icon(Icons.login),
+      //           callback: (){
+      //             print("Submited");
+      //           },
+      //           textStyle: myTextStyle25(),
+      //           bgColor: Colors.blue,
+      //
+      //         ),
+      //       ),
+      //
+      //     ],
+      //   ),
+      // )
       // Container(
       //   width: 400,
       //   height: 400,
@@ -110,24 +160,20 @@ class _MyHomePageState extends State<MyHomePage> {
       //         child: Container(
       //           width: 280,
       //           height: 280,
-      //           color: Colors.blue.shade700,
+      //           color: Colors.blue.shade1000,
       //         ),
       //       )
       //     ],
       //   ),
       // )
 
-
-
-        //<--------------------------CallBack Function & Custom widget----------------------------------------------->
+      //<--------------------------CallBack Function & Custom widget----------------------------------------------->
       // Container(
       //   child: Column(
       //     children: [CatList(), NameList(), Details(), Footer()],
       //   ),
       // )
       //<--Callback Classes Down here-->
-
-
 
       //<-----------------------------GridView--------------------------------->
       // GridView.builder(itemBuilder: (context, index) {
@@ -161,7 +207,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   Container(color: colors[7],),
       // ],)
 
-
       //<-------------------------------------------Date & Time Picker------------------------------------------------->
       // Center(
       //   child: Column(
@@ -192,13 +237,11 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-
-
       //<----------------------------------Date-Format------------------------------------------->
       // Center(
       //   child: Container(
-      //     width: 200,
-      //     height: 200,
+      //     width: 100,
+      //     height: 100,
       //     child: Column(
       //       mainAxisAlignment: MainAxisAlignment.center,
       //       children: [
@@ -212,8 +255,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // )
-
-
 
       //<------------------------------------Login Card using TextField-------------------------------------------->
       // Center(
@@ -305,7 +346,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-
       //<-----------------------------------Card widget------------------------------------------->
       // Center(
       //   child: Card(
@@ -319,8 +359,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-
-
       //<--------------------------------Style & Theme-------------------------------------->
       // Column(
       //   children: [
@@ -331,8 +369,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // )
 
-
-
       //<----------------------------Add custome fontfamily------------------------------------------>
       // Center(child: Container(
       //   width: 100,
@@ -342,7 +378,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // )
       //
       // )
-
 
       //<-------------------------------------------CircleAvatar------------------------------------------>
       // Center(
@@ -368,8 +403,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-
-
       //<--------------------------------ListTile------------------------------------>
       // ListView.separated(itemBuilder: (context, index) {
       //   return ListTile(
@@ -392,7 +425,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       //   color: Colors.green,
       // )
-
 
       //<--------------------------------------Expanded--------------------------------------->
       // Column(
@@ -468,8 +500,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // )
 
-
-
       //<-------------------------------------Add Image------------------------------------------>
       // Center(
       //   child: Container(
@@ -479,12 +509,11 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-
       //<----------------------------------------Container Decoration----------------------------------------->
       // Container(
       //   width: double.infinity,
       //   height: double.infinity,
-      //   color: Colors.deepOrange.shade200,
+      //   color: Colors.deepOrange.shade100,
       //   child: Center(
       //     child: Container(
       //       width: 150,
@@ -511,9 +540,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // )
-
-
-
 
       //<--------------------------------------ListView------------------------------------------->
       // ListView.separated(itemBuilder: (context, index) {
@@ -573,9 +599,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // )
 
-
-
-
       // <--------------------------------------Scroll View----------------------------------->
       // Padding(
       //   padding: const EdgeInsets.all(8.0),
@@ -590,32 +613,32 @@ class _MyHomePageState extends State<MyHomePage> {
       //               children: [
       //                 Container(
       //                   margin: EdgeInsets.only(right: 10),
-      //                   height: 200,
-      //                   width: 200,
+      //                   height: 100,
+      //                   width: 100,
       //                   color: Colors.yellow,
       //                 ),
       //                 Container(
       //                   margin: EdgeInsets.only(right: 10),
-      //                   height: 200,
-      //                   width: 200,
+      //                   height: 100,
+      //                   width: 100,
       //                   color: Colors.brown,
       //                 ),
       //                 Container(
       //                   margin: EdgeInsets.only(right: 10),
-      //                   height: 200,
-      //                   width: 200,
+      //                   height: 100,
+      //                   width: 100,
       //                   color: Colors.cyan,
       //                 ),
       //                 Container(
       //                   margin: EdgeInsets.only(right: 10),
-      //                   height: 200,
-      //                   width: 200,
+      //                   height: 100,
+      //                   width: 100,
       //                   color: Colors.blue,
       //                 ),
       //                 Container(
       //                   margin: EdgeInsets.only(right: 10),
-      //                   height: 200,
-      //                   width: 200,
+      //                   height: 100,
+      //                   width: 100,
       //                   color: Colors.red,
       //                 ),
       //               ],
@@ -624,62 +647,62 @@ class _MyHomePageState extends State<MyHomePage> {
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.red,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.blueGrey,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.cyan,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.brown,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.yellow,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.red,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.blueGrey,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.cyan,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.brown,
       //         ),
       //         Container(
       //           margin: EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           // width: 200,
+      //           height: 100,
+      //           // width: 100,
       //           color: Colors.brown,
       //         ),
       //       ],
@@ -743,7 +766,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //           child: ListView.builder(itemBuilder: (context, index) => Padding(
 //             padding: const EdgeInsets.all(8.0),
 //             child: Container(
-//               width: 200,
+//               width: 100,
 //               decoration: BoxDecoration(
 //                 borderRadius: BorderRadius.circular(10),
 //                 color: Colors.orange,
