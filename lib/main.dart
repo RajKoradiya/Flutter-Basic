@@ -44,6 +44,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var count = 0;
+
   // var emailText = TextEditingController();
   // var passText = TextEditingController();
 
@@ -58,24 +60,45 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        width: 300,
-        height: 300,
-        color: Colors.blueGrey,
-        child: Stack(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Positioned(
-              bottom: 10,
-              right: 10,
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.orange,
-              ),
-            )
+            Text("Count: $count", style: TextStyle(fontSize: 30),),
+            ElevatedButton(onPressed: (){
+              setState(() {
+                count++;
+                print(count);
+              });
+
+            }, child: Text("Increment"))
           ],
         ),
       )
+
+
+
+      //<-----------------------------------------Positioned widget--------------------------------------------->
+      // Container(
+      //   width: 300,
+      //   height: 300,
+      //   color: Colors.blueGrey,
+      //   child: Stack(
+      //     children: [
+      //       Positioned(
+      //         bottom: 10,
+      //         right: 10,
+      //         child: Container(
+      //           width: 100,
+      //           height: 100,
+      //           color: Colors.orange,
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // )
+
+      //<-----------------------------------Font Awesome Icon------------------------------------------>
       // Center(
       //     child: Row(
       //       mainAxisAlignment: MainAxisAlignment.center,
@@ -93,6 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //       ],
       //     )
       // )
+
+
+
+      //<-------------------------------------------------- RichText Widget --------------------------------------------->
       // Center(
       //   child: RichText(
       //     text: TextSpan(
@@ -118,6 +145,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //
       //   ),
       // )
+
+
+
+      //<-------------------------------------------SizeBox & Wrap Widget------------------------------------------------>
       // SizedBox(
       //   width: double.infinity,
       //   height: double.infinity,
@@ -170,6 +201,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
+
+
+
+      //<-----------------------------------------------Custom Widget----------------------------------------->
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
@@ -208,6 +243,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // )
+
+
+      //<------------------------------------------Stack Widget------------------------------------>
       // Container(
       //   width: 400,
       //   height: 400,
