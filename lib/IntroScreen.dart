@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/main.dart';
+// import 'package:flutter_demo/main.dart';
 
 class IntroScreen extends StatelessWidget{
+  var nameFromMain;
+  IntroScreen(this.nameFromMain);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,10 +15,10 @@ class IntroScreen extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Welcome", style: TextStyle(fontSize: 35, color: Colors.red),),
+            Text("Welcome $nameFromMain", style: TextStyle(fontSize: 35, color: Colors.red),),
             SizedBox(height: 10,),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: 'Home',)));
+              Navigator.pop(context);
              }, child: Text("Next"))
           ],
 

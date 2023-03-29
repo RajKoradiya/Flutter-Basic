@@ -5,6 +5,7 @@
 // import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 import 'package:flutter_demo/SplashScreen.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -54,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // var result="";
   // var emailText = TextEditingController();
   // var passText = TextEditingController();
+  var name = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +74,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          child: Center(child: Text("Welcome to main page.", style: TextStyle(fontSize: 30,color: Colors.white),)),
+          child: Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Welcome", style: TextStyle(fontSize: 30,color: Colors.white),),
+              SizedBox(height: 10,),
+              TextField(
+                controller: name,
+              ),
+              SizedBox(height: 10,),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen(name.text.toString()),));
+              }, child: Text("Next")),
+            ],
+          )),
           color: Colors.blue.shade200,
         ),
       )
