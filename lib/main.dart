@@ -5,7 +5,8 @@
 // import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/IntroScreen.dart';
+// import 'package:flutter_demo/IntroScreen.dart';
+import 'package:flutter_demo/SplashScreen.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
               // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
               )),
       debugShowCheckedModeBanner: false,
-      home: IntroScreen(),
+      home: SplashScreen(),
     );
   }
 }
