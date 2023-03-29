@@ -2,7 +2,10 @@
 
 // import 'dart:ffi';
 
+// import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
               // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
               )),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: IntroScreen(),
     );
   }
 }
@@ -45,9 +48,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // var count = 0;
-  var nc1 = TextEditingController();
-  var nc2 = TextEditingController();
-  var result="";
+  // var nc1 = TextEditingController();
+  // var nc2 = TextEditingController();
+  // var result="";
   // var emailText = TextEditingController();
   // var passText = TextEditingController();
 
@@ -64,97 +67,104 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.blue.shade100,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                keyboardType: TextInputType.number,
-                controller: nc1,
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
-                      color: Colors.black54,
-                      width: 2
-                    )
-                  )
-                ),
-              ),
-              SizedBox(height: 10,),
-              TextField(
-                keyboardType: TextInputType.number,
-                controller: nc2,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(
-                            color: Colors.black54,
-                            width: 2
-                        )
-                    )
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ElevatedButton(onPressed: (){
-                      var no1 = int.parse(nc1.text.toString());
-                      var no2 = int.parse(nc2.text.toString());
-
-                      var add = no1+no2;
-
-                      result = "The $no1 and $no2 sum is $add";
-
-                      setState(() {});
-
-                    }, child: Text("+", style: TextStyle(fontSize: 35),)),
-                    ElevatedButton(onPressed: (){
-                      var no1 = int.parse(nc1.text.toString());
-                      var no2 = int.parse(nc2.text.toString());
-
-                      var sub = no1-no2;
-
-                      result = "The $no1 and $no2 sub is $sub";
-                      setState(() {});
-
-                    }, child: Text("-", style: TextStyle(fontSize: 35),)),
-                    ElevatedButton(onPressed: (){
-                      var no1 = int.parse(nc1.text.toString());
-                      var no2 = int.parse(nc2.text.toString());
-
-                      var mul = no1*no2;
-
-                      result = "The $no1 and $no2 multiple is $mul";
-                      setState(() {});
-
-                    }, child: Text("*", style: TextStyle(fontSize: 35),)),
-                    ElevatedButton(onPressed: (){
-                      var no1 = int.parse(nc1.text.toString());
-                      var no2 = int.parse(nc2.text.toString());
-
-                      var div = no1/no2;
-
-                      result = "The $no1 and $no2 divide is ${div.toStringAsFixed(3)}";
-                      setState(() {});
-
-                    }, child: Text("/", style: TextStyle(fontSize: 35),)),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(result, style: TextStyle(fontSize: 20),),
-              )
-            ],
-          ),
+      body: Center(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Center(child: Text("Welcome to main page.", style: TextStyle(fontSize: 30,color: Colors.white),)),
+          color: Colors.blue.shade200,
         ),
       )
-
+      // Container(
+      //   color: Colors.blue.shade100,
+      //   child: Center(
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         TextField(
+      //           keyboardType: TextInputType.number,
+      //           controller: nc1,
+      //           decoration: InputDecoration(
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(10),
+      //               borderSide: BorderSide(
+      //                 color: Colors.black54,
+      //                 width: 2
+      //               )
+      //             )
+      //           ),
+      //         ),
+      //         SizedBox(height: 10,),
+      //         TextField(
+      //           keyboardType: TextInputType.number,
+      //           controller: nc2,
+      //           decoration: InputDecoration(
+      //               focusedBorder: OutlineInputBorder(
+      //                   borderRadius: BorderRadius.circular(10),
+      //                   borderSide: BorderSide(
+      //                       color: Colors.black54,
+      //                       width: 2
+      //                   )
+      //               )
+      //           ),
+      //         ),
+      //         Padding(
+      //           padding: const EdgeInsets.all(15.0),
+      //           child: Row(
+      //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //             children: [
+      //               ElevatedButton(onPressed: (){
+      //                 var no1 = int.parse(nc1.text.toString());
+      //                 var no2 = int.parse(nc2.text.toString());
+      //
+      //                 var add = no1+no2;
+      //
+      //                 result = "The $no1 and $no2 sum is $add";
+      //
+      //                 setState(() {});
+      //
+      //               }, child: Text("+", style: TextStyle(fontSize: 35),)),
+      //               ElevatedButton(onPressed: (){
+      //                 var no1 = int.parse(nc1.text.toString());
+      //                 var no2 = int.parse(nc2.text.toString());
+      //
+      //                 var sub = no1-no2;
+      //
+      //                 result = "The $no1 and $no2 sub is $sub";
+      //                 setState(() {});
+      //
+      //               }, child: Text("-", style: TextStyle(fontSize: 35),)),
+      //               ElevatedButton(onPressed: (){
+      //                 var no1 = int.parse(nc1.text.toString());
+      //                 var no2 = int.parse(nc2.text.toString());
+      //
+      //                 var mul = no1*no2;
+      //
+      //                 result = "The $no1 and $no2 multiple is $mul";
+      //                 setState(() {});
+      //
+      //               }, child: Text("*", style: TextStyle(fontSize: 35),)),
+      //               ElevatedButton(onPressed: (){
+      //                 var no1 = int.parse(nc1.text.toString());
+      //                 var no2 = int.parse(nc2.text.toString());
+      //
+      //                 var div = no1/no2;
+      //
+      //                 result = "The $no1 and $no2 divide is ${div.toStringAsFixed(3)}";
+      //                 setState(() {});
+      //
+      //               }, child: Text("/", style: TextStyle(fontSize: 35),)),
+      //             ],
+      //           ),
+      //         ),
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Text(result, style: TextStyle(fontSize: 20),),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // )
 
 
 
