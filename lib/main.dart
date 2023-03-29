@@ -5,9 +5,9 @@
 // import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
-import 'package:flutter_demo/SplashScreen.dart';
+// import 'package:flutter_demo/IntroScreen.dart';
+// import 'package:flutter_demo/SplashScreen.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
               // titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic)
               )),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: MyHomePage(title: "Home",),
     );
   }
 }
@@ -49,18 +49,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  RangeValues values = RangeValues(0, 1);
   // var count = 0;
   // var nc1 = TextEditingController();
   // var nc2 = TextEditingController();
   // var result="";
   // var emailText = TextEditingController();
   // var passText = TextEditingController();
-  var name = TextEditingController();
+  // var name = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
 
 
+    RangeLabels labals = RangeLabels(values.start.toString(), values.end.toString());
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
     // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
@@ -71,26 +73,50 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Center(child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Welcome", style: TextStyle(fontSize: 30,color: Colors.white),),
-              SizedBox(height: 10,),
-              TextField(
-                controller: name,
-              ),
-              SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen(name.text.toString()),));
-              }, child: Text("Next")),
-            ],
-          )),
-          color: Colors.blue.shade200,
+        child: RangeSlider(
+          values: values,
+          labels: labals,
+          divisions: 10,
+          onChanged: (newValue){
+            values = newValue;
+            print("${newValue.start}, ${newValue.end}");
+             setState(() {
+
+            });
+
+
+          },
         ),
       )
+
+        //<----------------------------Splash Screen, Data Passing one to anothe screen--------------------------------------->
+      // Center(
+      //   child: Container(
+      //     width: double.infinity,
+      //     height: double.infinity,
+      //     child: Center(child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Text("Welcome", style: TextStyle(fontSize: 30,color: Colors.white),),
+      //         SizedBox(height: 10,),
+      //         TextField(
+      //           controller: name,
+      //         ),
+      //         SizedBox(height: 10,),
+      //         ElevatedButton(onPressed: (){
+      //           Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen(name.text.toString()),));
+      //         }, child: Text("Next")),
+      //       ],
+      //     )),
+      //     color: Colors.blue.shade200,
+      //   ),
+      // )
+
+
+
+
+
+      //<-----------------------------------------------Basic Calculation---------------------------------------------->
       // Container(
       //   color: Colors.blue.shade100,
       //   child: Center(
@@ -939,6 +965,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 
 // class CatList extends StatelessWidget{
 //   @override
