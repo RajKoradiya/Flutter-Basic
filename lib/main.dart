@@ -58,11 +58,20 @@ class _MyHomePageState extends State<MyHomePage> {
   // var passText = TextEditingController();
   // var name = TextEditingController();
 
+  var _width = 200.0;
+  var _heigth = 100.0;
+  bool flag = true;
+  var myDecor = BoxDecoration(
+    borderRadius: BorderRadius.circular(2),
+    color: Colors.green
+  );
+
+
   @override
   Widget build(BuildContext context) {
 
 
-    RangeLabels labals = RangeLabels(values.start.toString(), values.end.toString());
+    // RangeLabels labals = RangeLabels(values.start.toString(), values.end.toString());
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
     // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
@@ -73,21 +82,56 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RangeSlider(
-          values: values,
-          labels: labals,
-          divisions: 10,
-          onChanged: (newValue){
-            values = newValue;
-            print("${newValue.start}, ${newValue.end}");
-             setState(() {
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              width: _width,
+              height: _heigth,
+              decoration: myDecor,
+              duration: Duration(seconds: 1),
+              curve: Curves.easeInCubic,
+            ),
+            ElevatedButton(onPressed: (){
+              setState(() {
+                if(flag){
+                  _width = 100.0;
+                  _heigth = 200.0;
+                  flag = false;
+                  myDecor = BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.orange
+                  );
+                }
+                else{
+                  _width = 200.0;
+                  _heigth = 100.0;
+                  myDecor = BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Colors.green
+                  );
+                  flag = true;
+                }
 
-            });
-
-
-          },
+              });
+            }, child: Text("Animation"))
+          ],
         ),
       )
+      // Center(
+      //   child: RangeSlider(
+      //     values: values,
+      //     labels: labals,
+      //     divisions: 10,
+      //     onChanged: (newValue){
+      //       values = newValue;
+      //       print("${newValue.start}, ${newValue.end}");
+      //        setState(() {
+      //
+      //       });
+      //     },
+      //   ),
+      // )
 
         //<----------------------------Splash Screen, Data Passing one to anothe screen--------------------------------------->
       // Center(
