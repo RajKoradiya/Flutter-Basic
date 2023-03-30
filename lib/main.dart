@@ -58,8 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
   // var passText = TextEditingController();
   // var name = TextEditingController();
 
-  var _width = 200.0;
-  var _heigth = 100.0;
+  // var _width = 200.0;
+  // var _heigth = 100.0;
+  var myOpecity = 1.0;
   bool flag = true;
   var myDecor = BoxDecoration(
     borderRadius: BorderRadius.circular(2),
@@ -85,39 +86,71 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedContainer(
-              width: _width,
-              height: _heigth,
-              decoration: myDecor,
-              duration: Duration(seconds: 1),
-              curve: Curves.easeInCubic,
-            ),
+            AnimatedOpacity(opacity: myOpecity, duration: Duration(seconds: 2), child: Container(
+              width: 200,
+              height: 100,
+              color: Colors.green,
+            ),),
             ElevatedButton(onPressed: (){
               setState(() {
                 if(flag){
-                  _width = 100.0;
-                  _heigth = 200.0;
+                  myOpecity = 0.0;
                   flag = false;
-                  myDecor = BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.orange
-                  );
                 }
                 else{
-                  _width = 200.0;
-                  _heigth = 100.0;
-                  myDecor = BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: Colors.green
-                  );
+                  myOpecity = 1.0;
                   flag = true;
                 }
 
               });
-            }, child: Text("Animation"))
+            }, child: Text("Close"))
           ],
         ),
       )
+
+      //<-----------------------------------------Animated Container----------------------------------------->
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedContainer(
+      //         width: _width,
+      //         height: _heigth,
+      //         decoration: myDecor,
+      //         duration: Duration(seconds: 1),
+      //         curve: Curves.easeInCubic,
+      //       ),
+      //       ElevatedButton(onPressed: (){
+      //         setState(() {
+      //           if(flag){
+      //             _width = 100.0;
+      //             _heigth = 200.0;
+      //             flag = false;
+      //             myDecor = BoxDecoration(
+      //               borderRadius: BorderRadius.circular(25),
+      //               color: Colors.orange
+      //             );
+      //           }
+      //           else{
+      //             _width = 200.0;
+      //             _heigth = 100.0;
+      //             myDecor = BoxDecoration(
+      //               borderRadius: BorderRadius.circular(2),
+      //               color: Colors.green
+      //             );
+      //             flag = true;
+      //           }
+      //
+      //         });
+      //       }, child: Text("Animation"))
+      //     ],
+      //   ),
+      // )
+
+
+
+
+      //<--------------------------------------RangeSlider------------------------------>
       // Center(
       //   child: RangeSlider(
       //     values: values,
