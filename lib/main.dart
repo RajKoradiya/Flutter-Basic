@@ -106,21 +106,27 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: ListWheelScrollView(
-          itemExtent: 150,
-        children: arrList.map((value) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Center(child: Text("$value", style: TextStyle(fontSize: 30,color: Colors.white),)),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.green,
-            ),
-              width: double.infinity,
-
-            ),
-        )).toList(),
+      body: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset('assets/image/bg.jpg',width: 300,height: 200, fit: BoxFit.fill,),
+        ),
       )
+      // ListWheelScrollView(
+      //     itemExtent: 150,
+      //   children: arrList.map((value) => Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: Container(
+      //       child: Center(child: Text("$value", style: TextStyle(fontSize: 30,color: Colors.white),)),
+      //       decoration: BoxDecoration(
+      //         borderRadius: BorderRadius.circular(20),
+      //         color: Colors.green,
+      //       ),
+      //         width: double.infinity,
+      //
+      //       ),
+      //   )).toList(),
+      // )
       // Container(
       //   child: Center(
       //     child: InkWell(
