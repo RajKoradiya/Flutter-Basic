@@ -7,6 +7,7 @@
 // import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/detial_page.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
@@ -106,12 +107,30 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset('assets/image/bg.jpg',width: 300,height: 200, fit: BoxFit.fill,),
+      body:
+      Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.blue.shade200,
+              Colors.red.shade200
+            ]
+          )
         ),
+        child: Center(child: Text("Raj",style: myTextStyle25(),)),
       )
+      // Center(
+      //   child: ClipRRect(
+      //     borderRadius: BorderRadius.circular(20),
+      //     child: Image.asset('assets/image/bg.jpg',width: 300,height: 200, fit: BoxFit.fill,),
+      //   ),
+      // )
+
+
+
+      //<-----------------------------------------ListWheelScrollView widget----------------------------------------------->
       // ListWheelScrollView(
       //     itemExtent: 150,
       //   children: arrList.map((value) => Padding(
@@ -127,6 +146,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //       ),
       //   )).toList(),
       // )
+
+
+
+      //<-------------------------------------------------Hero widget------------------------------------------>
       // Container(
       //   child: Center(
       //     child: InkWell(

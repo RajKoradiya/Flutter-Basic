@@ -28,7 +28,7 @@ TextStyle myTextStyle25(
     fontWeight: FontWeight.bold,
     fontFamily: "NSW",
     fontStyle: FontStyle.italic,
-    color: Colors.green
+    color: Colors.white
     // fontStyle: FontStyle.italic,
     // color: textColor
   );
