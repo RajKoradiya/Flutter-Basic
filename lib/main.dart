@@ -4,6 +4,8 @@
 
 // import 'dart:ffi';
 
+// import 'dart:async';
+
 import 'package:flutter/material.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
@@ -60,7 +62,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // var _width = 200.0;
   // var _heigth = 100.0;
-  var myOpecity = 1.0;
+  // var myOpecity = 1.0;
+  @override
+  void initState() {
+    super.initState();
+
+    // Timer(Duration(seconds: 4), (){
+    //   reload();
+    // });
+  }
+
+  void reload() {
+    setState(() {
+      if(flag){
+        flag = false;
+      }
+      else{
+        flag = true;
+      }
+
+    });
+  }
   bool flag = true;
   var myDecor = BoxDecoration(
     borderRadius: BorderRadius.circular(2),
@@ -82,31 +104,52 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedOpacity(opacity: myOpecity, duration: Duration(seconds: 2), child: Container(
+      body: Column(
+        children: [
+          AnimatedCrossFade(
+            duration: Duration(seconds: 2),
+            firstChild: Container(
               width: 200,
-              height: 100,
+              height: 200,
               color: Colors.green,
-            ),),
-            ElevatedButton(onPressed: (){
-              setState(() {
-                if(flag){
-                  myOpecity = 0.0;
-                  flag = false;
-                }
-                else{
-                  myOpecity = 1.0;
-                  flag = true;
-                }
+            ),
+            secondChild: Image.asset("assets/image/flutter-logo.png",width: 200,height: 200,),
+            crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+            firstCurve: Curves.bounceInOut,
+            secondCurve: Curves.easeInCubic,
 
-              });
-            }, child: Text("Close"))
-          ],
-        ),
+          ),
+          ElevatedButton(onPressed: (){
+            reload();
+          }, child: Text("Change"))
+        ],
       )
+
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedOpacity(opacity: myOpecity, duration: Duration(seconds: 2), child: Container(
+      //         width: 200,
+      //         height: 100,
+      //         color: Colors.green,
+      //       ),),
+      //       ElevatedButton(onPressed: (){
+      //         setState(() {
+      //           if(flag){
+      //             myOpecity = 0.0;
+      //             flag = false;
+      //           }
+      //           else{
+      //             myOpecity = 1.0;
+      //             flag = true;
+      //           }
+      //
+      //         });
+      //       }, child: Text("Close"))
+      //     ],
+      //   ),
+      // )
 
       //<-----------------------------------------Animated Container----------------------------------------->
       // Center(
