@@ -7,6 +7,7 @@
 // import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/widgets/detial_page.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/SplashScreen.dart';
@@ -104,27 +105,49 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          AnimatedCrossFade(
-            duration: Duration(seconds: 2),
-            firstChild: Container(
-              width: 200,
-              height: 200,
-              color: Colors.green,
+      body: Container(
+        child: Center(
+          child: InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Detailpage()));
+            },
+            child: Hero(
+              tag: 'background',
+              child: Image.asset('assets/image/bg.jpg', width: 100,height: 100,),
             ),
-            secondChild: Image.asset("assets/image/flutter-logo.png",width: 200,height: 200,),
-            crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            firstCurve: Curves.bounceInOut,
-            secondCurve: Curves.easeInCubic,
-
           ),
-          ElevatedButton(onPressed: (){
-            reload();
-          }, child: Text("Change"))
-        ],
+        ),
       )
 
+
+
+      //<-----------------------------------------AnimatedCrossFade------------------------------------------->
+      // Column(
+      //   children: [
+      //     AnimatedCrossFade(
+      //       duration: Duration(seconds: 2),
+      //       firstChild: Container(
+      //         width: 200,
+      //         height: 200,
+      //         color: Colors.green,
+      //       ),
+      //       secondChild: Image.asset("assets/image/flutter-logo.png",width: 200,height: 200,),
+      //       crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      //       firstCurve: Curves.bounceInOut,
+      //       secondCurve: Curves.easeInCubic,
+      //
+      //     ),
+      //     ElevatedButton(onPressed: (){
+      //       reload();
+      //     }, child: Text("Change"))
+      //   ],
+      // )
+
+
+
+
+
+      //<-------------------------------------------AnimatedOpacity---------------------------------------->
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
