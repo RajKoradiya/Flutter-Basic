@@ -7,7 +7,7 @@
 // import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/widgets/detial_page.dart';
+// import 'package:flutter_demo/widgets/detial_page.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/SplashScreen.dart';
@@ -64,32 +64,33 @@ class _MyHomePageState extends State<MyHomePage> {
   // var _width = 200.0;
   // var _heigth = 100.0;
   // var myOpecity = 1.0;
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   // Timer(Duration(seconds: 4), (){
+  //   //   reload();
+  //   // });
+  // }
 
-    // Timer(Duration(seconds: 4), (){
-    //   reload();
-    // });
-  }
+  // void reload() {
+  //   setState(() {
+  //     if(flag){
+  //       flag = false;
+  //     }
+  //     else{
+  //       flag = true;
+  //     }
+  //
+  //   });
+  // }
+  // bool flag = true;
+  // var myDecor = BoxDecoration(
+  //   borderRadius: BorderRadius.circular(2),
+  //   color: Colors.green
+  // );
 
-  void reload() {
-    setState(() {
-      if(flag){
-        flag = false;
-      }
-      else{
-        flag = true;
-      }
-
-    });
-  }
-  bool flag = true;
-  var myDecor = BoxDecoration(
-    borderRadius: BorderRadius.circular(2),
-    color: Colors.green
-  );
-
+  var arrList = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
   @override
   Widget build(BuildContext context) {
@@ -105,19 +106,34 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        child: Center(
-          child: InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Detailpage()));
-            },
-            child: Hero(
-              tag: 'background',
-              child: Image.asset('assets/image/bg.jpg', width: 100,height: 100,),
+      body: ListWheelScrollView(
+          itemExtent: 150,
+        children: arrList.map((value) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            child: Center(child: Text("$value", style: TextStyle(fontSize: 30,color: Colors.white),)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.green,
             ),
-          ),
-        ),
+              width: double.infinity,
+
+            ),
+        )).toList(),
       )
+      // Container(
+      //   child: Center(
+      //     child: InkWell(
+      //       onTap: (){
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) => Detailpage()));
+      //       },
+      //       child: Hero(
+      //         tag: 'background',
+      //         child: Image.asset('assets/image/bg.jpg', width: 100,height: 100,),
+      //       ),
+      //     ),
+      //   ),
+      // )
 
 
 
