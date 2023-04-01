@@ -7,16 +7,13 @@
 // import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/ui_assets/ui.dart';
+// import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/detial_page.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
 // import 'package:flutter_demo/SplashScreen.dart';
-// import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/round_btn.dart';
-// import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:intl/intl.dart';
 
 void main() {
@@ -52,8 +49,8 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  RangeValues values = RangeValues(0, 1);
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
+  // RangeValues values = RangeValues(0, 1);
   // var count = 0;
   // var nc1 = TextEditingController();
   // var nc2 = TextEditingController();
@@ -91,7 +88,27 @@ class _MyHomePageState extends State<MyHomePage> {
   //   color: Colors.green
   // );
 
-  var arrList = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+  // var arrList = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+  late Animation animation;
+  late Animation colorAnimation;
+  late AnimationController animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
+    animation = Tween(begin: 0.0, end: 200.0).animate(animationController);
+    colorAnimation = ColorTween(begin: Colors.blue, end: Colors.red).animate(animationController);
+
+    animationController.addListener(() {
+      // print(animation.value);
+      setState(() {
+
+      });
+    });
+
+    animationController.forward();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,20 +124,26 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body:
-      Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.blue.shade200,
-              Colors.red.shade200
-            ]
-          )
+      body: Center(
+        child: Container(
+          width: animation.value,
+          height: animation.value,
+          color: colorAnimation.value,
         ),
-        child: Center(child: Text("Raj",style: myTextStyle25(),)),
       )
+      // Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   decoration: BoxDecoration(
+      //     gradient: LinearGradient(
+      //       colors: [
+      //         Colors.blue.shade200,
+      //         Colors.red.shade200
+      //       ]
+      //     )
+      //   ),
+      //   child: Center(child: Text("Raj",style: myTextStyle25(),)),
+      // )
       // Center(
       //   child: ClipRRect(
       //     borderRadius: BorderRadius.circular(20),
