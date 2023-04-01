@@ -89,25 +89,26 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   // );
 
   // var arrList = [1,2,3,4,5,6,7,8,9,10,11,12,13];
-  late Animation animation;
-  late Animation colorAnimation;
-  late AnimationController animationController;
+
+  late Animation _animation;
+  // late Animation colorAnimation;
+  late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
-    animation = Tween(begin: 0.0, end: 200.0).animate(animationController);
-    colorAnimation = ColorTween(begin: Colors.blue, end: Colors.red).animate(animationController);
+    _animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
+    // colorAnimation = ColorTween(begin: Colors.blue, end: Colors.red).animate(animationController);
 
-    animationController.addListener(() {
+    _animationController.addListener(() {
       // print(animation.value);
       setState(() {
 
       });
     });
 
-    animationController.forward();
+    _animationController.forward();
   }
 
   @override
@@ -118,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
     // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
+    var listRadius = [100.0,150.0,200.0,250.0];
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -125,12 +127,31 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         title: Text(widget.title),
       ),
       body: Center(
-        child: Container(
-          width: animation.value,
-          height: animation.value,
-          color: colorAnimation.value,
+        child: Stack(
+          alignment: Alignment.center,
+          children: listRadius.map((radius) => Container(
+            width: radius*_animation.value,
+            height: radius*_animation.value,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.blue.withOpacity(1.0 - _animation.value),
+            ),
+          )).toList()
         ),
       )
+
+
+      //<-------------------------------------------Tween Animation---------------------------------------->
+      // Center(
+      //   child: Container(
+      //     width: animation.value,
+      //     height: animation.value,
+      //     color: colorAnimation.value,
+      //   ),
+      // )
+
+
+      //<---------------------------------- Gradient------------------------------------>
       // Container(
       //   width: double.infinity,
       //   height: double.infinity,
@@ -144,6 +165,10 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       //   ),
       //   child: Center(child: Text("Raj",style: myTextStyle25(),)),
       // )
+
+
+
+      //<----------------------------------ClipRRect------------------------->
       // Center(
       //   child: ClipRRect(
       //     borderRadius: BorderRadius.circular(20),
