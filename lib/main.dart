@@ -6,7 +6,10 @@
 
 // import 'dart:async';
 
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:flutter_demo/ui_assets/ui.dart';
 // import 'package:flutter_demo/widgets/detial_page.dart';
 // import 'package:flutter_demo/IntroScreen.dart';
@@ -90,25 +93,32 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   // var arrList = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
-  late Animation _animation;
+  // late Animation _animation;
   // late Animation colorAnimation;
-  late AnimationController _animationController;
+  // late AnimationController _animationController;
 
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
+  //   _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
+  //   // colorAnimation = ColorTween(begin: Colors.blue, end: Colors.red).animate(animationController);
+  //
+  //   _animationController.addListener(() {
+  //     // print(animation.value);
+  //     setState(() {
+  //
+  //     });
+  //   });
+  //
+  //   _animationController.forward();
+  // }
+  var name = TextEditingController();
+  var nameValue = "Null value";
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
-    _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
-    // colorAnimation = ColorTween(begin: Colors.blue, end: Colors.red).animate(animationController);
-
-    _animationController.addListener(() {
-      // print(animation.value);
-      setState(() {
-
-      });
-    });
-
-    _animationController.forward();
+    getvalue();
   }
 
   @override
@@ -119,26 +129,60 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     // var arrName = ["Raj", "Ashish", "Monank", "Sandip", "Manthan"];
     // var time = DateTime.now();
     // var colors = [Colors.cyan,Colors.red,Colors.orange,Colors.green,Colors.yellow,Colors.brown,Colors.blueGrey,Colors.greenAccent];
-    var listRadius = [100.0,150.0,200.0,250.0];
+    // var listRadius = [100.0,150.0,200.0,250.0];
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: listRadius.map((radius) => Container(
-            width: radius*_animation.value,
-            height: radius*_animation.value,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.blue.withOpacity(1.0 - _animation.value),
-            ),
-          )).toList()
+      body:
+      Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: name,
+                decoration: InputDecoration(
+                  label: Text('Enter name'),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                      width: 1
+                    )
+                  )
+                ),
+              ),
+              SizedBox(height: 10,),
+              ElevatedButton(onPressed: () async {
+                var nm = name.text.toString();
+                var prefs = await SharedPreferences.getInstance();
+
+                prefs.setString("name", nm);
+              }, child: Text("Save")),
+              SizedBox(height: 10,),
+              Text("$nameValue")
+            ],
+          ),
         ),
       )
+      // Center(
+      //   child: Stack(
+      //     alignment: Alignment.center,
+      //     children: listRadius.map((radius) => Container(
+      //       width: radius*_animation.value,
+      //       height: radius*_animation.value,
+      //       decoration: BoxDecoration(
+      //         shape: BoxShape.circle,
+      //         color: Colors.blue.withOpacity(1.0 - _animation.value),
+      //       ),
+      //     )).toList()
+      //   ),
+      // )
 
 
       //<-------------------------------------------Tween Animation---------------------------------------->
@@ -1199,6 +1243,17 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       //   ),
       // )
     );
+  }
+
+  void getvalue() async {
+    var prefs = await SharedPreferences.getInstance();
+
+    var getName = prefs.getString("name");
+    nameValue = getName!;
+
+    setState(() {
+
+    });
   }
 }
 
